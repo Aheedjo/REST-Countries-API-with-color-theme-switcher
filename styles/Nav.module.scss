@@ -1,0 +1,16 @@
+.nav {
+    @apply bg-dark-mode-text-&-light-mode-elements dark:bg-dark-mode-elements;
+    @apply shadow-md mb-8;
+
+    .container {
+        @apply flex items-center justify-between w-[90%] max-w-[1280px] mx-auto py-3 md:py-4;
+
+        .logo {
+            @apply text-lg sm:text-xl font-bold;
+        }
+
+        .themeToggle {
+            @apply bg-none border-none flex items-center justify-center gap-2 text-sm;
+        }
+    }
+}
