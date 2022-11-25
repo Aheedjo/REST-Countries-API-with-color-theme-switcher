@@ -1,0 +1,29 @@
+.cardCont {
+    @apply bg-white dark:bg-dark-mode-elements shadow-sm rounded-md w-full min-w-[264px] max-w-[300px];
+
+    .flagCont {
+        @apply h-[175px] w-full relative;
+
+        .flag {
+            @apply rounded-t-md;
+        }
+    }
+
+    .detailsCont {
+        @apply px-6 pt-4 pb-8;
+
+        .countryName {
+            @apply text-xl font-bold mb-3;
+        }
+
+        .details {
+            .detail {
+                @apply flex gap-1;
+
+                .key {
+                    @apply font-semibold;
+                }
+            }
+        }
+    }
+}

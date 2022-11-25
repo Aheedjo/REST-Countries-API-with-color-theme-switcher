@@ -1,0 +1,7 @@
+.main {
+    @apply w-[90%] max-w-[1280px] mx-auto;
+
+    .countriesGrid {
+        @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 place-items-center gap-[50px] mt-8;
+    }
+}

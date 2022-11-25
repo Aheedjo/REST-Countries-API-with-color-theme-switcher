@@ -1,0 +1,57 @@
+.main {
+    @apply w-[90%] max-w-[1280px] mx-auto;
+
+    .backBtn {
+        @apply flex items-center gap-3 py-1 px-4 shadow-sm w-min cursor-pointer;
+    }
+
+    .countryDetailsCont {
+        @apply mt-8 flex flex-col lg:flex-row lg:items-center gap-10 lg:gap-14;
+
+        .flagCont {
+            @apply h-[250px] sm:h-[300px] lg:h-[350px] w-full max-w-[560px] relative;
+
+            .flag {
+                @apply rounded-md;
+            }
+        }
+
+        .countryDetails {
+            .name {
+                @apply text-2xl font-bold mb-5 lg:mb-8;
+            }
+
+            .detail {
+                @apply mt-1;
+
+                .key {
+                    @apply font-semibold whitespace-nowrap;
+                }
+            }
+
+            .detailsCont {
+                @apply flex flex-col gap-3 md:flex-row md:gap-20 lg:gap-10;
+
+                .detail {
+                    @apply flex gap-3;
+                }
+            }
+        }
+
+        .borderCountriesCont {
+            @apply flex flex-col md:items-center sm:flex-row gap-2 sm:gap-3 my-10;
+
+            .header {
+                @apply font-semibold items-center whitespace-nowrap;
+            }
+
+            .borderCountries {
+                @apply grid grid-cols-3 md:grid-cols-4 lg:grid-cols-3 gap-2 w-full;
+
+                .country {
+                    @apply py-1 px-2 text-center bg-white shadow-sm cursor-pointer;
+                }
+            }
+        }
+    }
+}

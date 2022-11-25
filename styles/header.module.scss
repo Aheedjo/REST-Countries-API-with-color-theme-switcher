@@ -1,0 +1,4 @@
+.controls {
+    @apply flex flex-col sm:flex-row md:items-center gap-7 justify-between;
+    @apply w-[90%] max-w-[1280px] mx-auto;
+}

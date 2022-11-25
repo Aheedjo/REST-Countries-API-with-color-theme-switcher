@@ -1,7 +1,11 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  reactStrictMode: true,
-  swcMinify: true,
-}
+    images: {
+        domains: ["localhost", "flagcdn.com", "upload.wikimedia.org"],
+        minimumCacheTTL: 60 * 60,
+    },
+    reactStrictMode: true,
+    swcMinify: true,
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;
