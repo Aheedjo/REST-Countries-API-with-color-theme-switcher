@@ -8,17 +8,22 @@ const CountryCard = ({ country }: { country: any }) => {
     return (
         <div
             className={`${countryCard.cardCont} bg-dark-mode-text-&-light-mode-elements dark:bg-dark-mode-elements`}
+            id="cardCont"
         >
-            <Link href="/CountryPage">
-                <Image
-                    src={country.flags.svg}
-                    alt={country.name}
-                    height={175}
-                    width={300}
-                    className={countryCard.flag}
-                ></Image>
+            <Link href={`/countries/${country.name.common}`}>
+                <div className={countryCard.flagCont}>
+                    <Image
+                        src={country.flags.svg}
+                        alt={country.name.common}
+                        layout="fill"
+                        objectFit="cover"
+                        sizes="100%"
+                        className={countryCard.flag}
+                    ></Image>
+                </div>
+
                 <div className={countryCard.detailsCont}>
-                    <p className={countryCard.countryName}>
+                    <p className={countryCard.countryName} id="name">
                         {country.name.common}
                     </p>
                     <div className={countryCard.details}>
@@ -30,15 +35,13 @@ const CountryCard = ({ country }: { country: any }) => {
                         </div>
                         <div className={countryCard.detail}>
                             <p className={countryCard.key}>Region:</p>
-                            <p className={countryCard.value}>
+                            <p className={countryCard.value} id="region">
                                 {country.region}
                             </p>
                         </div>
                         <div className={countryCard.detail}>
                             <p className={countryCard.key}>Capital:</p>
-                            <p className={countryCard.value}>
-                                {country.capital}
-                            </p>
+                            <p className={countryCard.value}>{country.capital}</p>
                         </div>
                     </div>
                 </div>

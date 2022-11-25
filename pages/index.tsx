@@ -1,48 +1,38 @@
-import styles from "../styles/Home.module.scss";
-import CountryCard from "../components/CountryCard";
-import Filter from "../components/Filter";
-import SearchBar from "../components/SearchBar";
+import { useState, useEffect } from "react";
 import { GetStaticProps, InferGetStaticPropsType } from "next";
-import { Key } from "react";
-
-interface indexPageProps {
-    countries: {
-        nativeName: string;
-        population: number;
-        region: string;
-        subregion: string;
-        capital: string;
-        tld: string;
-        currencies: string[];
-        languages: string[];
-        borders: string;
-        flags: { svg: string };
-    }[];
-}
+import Countries from "./countries/Countries";
+import Loading from "../components/Loading";
 
 export const getStaticProps: GetStaticProps = async () => {
     const res: Response = await fetch("https://restcountries.com/v3.1/all");
-    const countries = await res.json();
+    const data = await res.json();
 
     return {
-        props: { countries: countries.slice(0, 20) },
+        props: { data: data },
     };
 };
 
-export default function Home({
-    countries,
-}: InferGetStaticPropsType<typeof getStaticProps>) {
-    return (
-        <main className={styles.main}>
-            <div className={styles.controls}>
-                <SearchBar />
-                <Filter />
-            </div>
-            <div className={styles.countriesGrid}>
-                {countries.map((item: any, i: Key) => (
-                    <CountryCard country={item} key={i} />
-                ))}
-            </div>
-        </main>
-    );
+export default function Home({ data }: InferGetStaticPropsType<typeof getStaticProps>) {
+    const [countries, setCountries] = useState([]);
+    const [loading, setLoading] = useState(true);
+
+    const fetchCountries = () => {
+        setLoading(true);
+        try {
+            setCountries(data);
+            setLoading(false);
+        } catch (err) {
+            setLoading(false);
+        }
+    };
+
+    useEffect(() => {
+        fetchCountries();
+    }, []);
+
+    if (loading) {
+        return <Loading />;
+    } else {
+        return <Countries countries={countries} />;
+    }
 }

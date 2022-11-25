@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { BsMoon, BsSun } from "react-icons/bs";
 import NavStyles from "../styles/Nav.module.scss";
+import Link from "next/link";
+import { BsMoon, BsSun } from "react-icons/bs";
 import { useTheme } from "next-themes";
 
 const Nav = () => {
@@ -15,12 +16,12 @@ const Nav = () => {
             className={`${NavStyles.nav} bg-dark-mode-text-&-light-mode-elements dark:bg-dark-mode-elements`}
         >
             <div className={NavStyles.container}>
-                <h1 className={NavStyles.logo}>where in the world?</h1>
+                <Link href={"/"}>
+                    <h1 className={NavStyles.logo}>where in the world?</h1>
+                </Link>
                 <button
                     className={NavStyles.themeToggle}
-                    onClick={() =>
-                        setTheme(theme === "light" ? "dark" : "light")
-                    }
+                    onClick={() => setTheme(theme === "light" ? "dark" : "light")}
                 >
                     {theme === "light" ? (
                         <>

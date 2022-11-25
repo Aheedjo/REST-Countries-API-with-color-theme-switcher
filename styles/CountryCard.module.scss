@@ -1,8 +1,12 @@
 .cardCont {
     @apply bg-white dark:bg-dark-mode-elements shadow-sm rounded-md w-full min-w-[264px] max-w-[300px];
 
-    .flag {
-        @apply rounded-t-md object-cover;
+    .flagCont {
+        @apply h-[175px] w-full relative;
+
+        .flag {
+            @apply rounded-t-md;
+        }
     }
 
     .detailsCont {

@@ -1,13 +1,14 @@
 import "../styles/global.scss";
-import Nav from "../components/Nav";
 import type { AppProps } from "next/app";
+import Layout from "../components/layout";
 import { ThemeProvider } from "next-themes";
 
 export default function App({ Component, pageProps }: AppProps) {
     return (
         <ThemeProvider attribute="class">
-            <Nav />
-            <Component {...pageProps} />;
+            <Layout>
+                <Component {...pageProps} />
+            </Layout>
         </ThemeProvider>
     );
 }
