@@ -15,13 +15,13 @@ const Filter = () => {
         const regions = document.querySelectorAll("#region") as NodeListOf<HTMLElement> | null;
         regions!.forEach((item) => {
             if (region === "All") {
-                item.parentElement.parentElement.parentElement.parentElement.parentElement.style.display =
+                item.parentElement!.parentElement!.parentElement!.parentElement!.parentElement!.style.display =
                     "block";
             } else if (item?.innerText === region) {
-                item.parentElement.parentElement.parentElement.parentElement.parentElement.style.display =
+                item.parentElement!.parentElement!.parentElement!.parentElement!.parentElement!.style.display =
                     "block";
             } else {
-                item.parentElement.parentElement.parentElement.parentElement.parentElement.style.display =
+                item.parentElement!.parentElement!.parentElement!.parentElement!.parentElement!.style.display =
                     "none";
             }
         });
