@@ -10,7 +10,7 @@ const CountryCard = ({ country }: { country: any }) => {
             className={`${countryCard.cardCont} bg-dark-mode-text-&-light-mode-elements dark:bg-dark-mode-elements`}
             id="cardCont"
         >
-            <Link href={`/countries/${country.name.common}`}>
+            <Link href={`/${country.name.common}`}>
                 <div className={countryCard.flagCont}>
                     <Image
                         src={country.flags.svg}

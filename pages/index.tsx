@@ -1,7 +1,10 @@
 import { useState, useEffect } from "react";
 import { GetStaticProps, InferGetStaticPropsType } from "next";
-import Countries from "./countries/Countries";
 import Loading from "../components/Loading";
+import styles from "../styles/Home.module.scss";
+import Header from "../components/Header";
+import CountryCard from "../components/CountryCard";
+import { Key } from "react";
 
 export const getStaticProps: GetStaticProps = async () => {
     const res: Response = await fetch("https://restcountries.com/v3.1/all");
@@ -33,6 +36,17 @@ export default function Home({ data }: InferGetStaticPropsType<typeof getStaticP
     if (loading) {
         return <Loading />;
     } else {
-        return <Countries countries={countries} />;
+        return (
+            <>
+                <Header />
+                <div className={styles.main}>
+                    <div className={styles.countriesGrid}>
+                        {countries.map((item: any, i: Key) => (
+                            <CountryCard country={item} key={i} />
+                        ))}
+                    </div>
+                </div>
+            </>
+        );
     }
 }
