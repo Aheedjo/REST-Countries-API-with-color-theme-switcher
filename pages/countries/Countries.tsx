@@ -1,11 +1,10 @@
 import React from "react";
 import styles from "../../styles/Home.module.scss";
-import Nav from "../../components/Nav";
 import Header from "../../components/Header";
 import CountryCard from "../../components/CountryCard";
 import { Key } from "react";
 
-const Countres = ({ countries }) => {
+const Countres = ({ countries }: { countries: any }) => {
     return (
         <>
             <Header />

@@ -13,8 +13,8 @@ const Filter = () => {
 
     const filterCountries = (region: string) => {
         const regions = document.querySelectorAll("#region") as NodeListOf<HTMLElement> | null;
-        regions.forEach((item) => {
-            if (item?.innerText === "All") {
+        regions!.forEach((item) => {
+            if (region === "All") {
                 item.parentElement.parentElement.parentElement.parentElement.parentElement.style.display =
                     "block";
             } else if (item?.innerText === region) {
