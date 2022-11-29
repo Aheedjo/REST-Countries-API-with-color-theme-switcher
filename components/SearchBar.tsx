@@ -13,9 +13,9 @@ const SearchBar = () => {
             names != null &&
                 names.forEach((name) => {
                     if (name?.innerText.toLowerCase().includes(value.toLowerCase())) {
-                        name.parentElement.parentElement.parentElement.style.display = "block";
+                        name.parentElement!.parentElement!.parentElement!.style.display = "block";
                     } else {
-                        name.parentElement.parentElement.parentElement.style.display = "none";
+                        name.parentElement!.parentElement!.parentElement!.style.display = "none";
                     }
                 });
         });
