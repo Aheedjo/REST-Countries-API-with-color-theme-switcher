@@ -11,13 +11,13 @@ const SearchBar = () => {
             const names = document.querySelectorAll("#name") as NodeListOf<HTMLElement> | null;
 
             names != null &&
-                names.forEach((name) => {
-                    if (name?.innerText.toLowerCase().includes(value.toLowerCase())) {
-                        name.parentElement!.parentElement!.parentElement!.style.display = "block";
-                    } else {
-                        name.parentElement!.parentElement!.parentElement!.style.display = "none";
-                    }
-                });
+              names.forEach((name) => {
+                if (name?.innerText.toLowerCase().includes(value.toLowerCase())) {
+                    name.parentElement!.parentElement!.parentElement!.style.display = "block";
+                } else {
+                    name.parentElement!.parentElement!.parentElement!.style.display = "none";
+                }
+            });
         });
     }, []);
 
