@@ -1,10 +1,10 @@
 import React, { useState, useEffect, Key } from "react";
 import { useRouter } from "next/router";
-import styles from "../../styles/country.module.scss";
+import styles from "../styles/country.module.scss";
 import Image from "next/image";
 import Link from "next/link";
 import { BiArrowBack } from "react-icons/bi";
-import { addCommaToNumber } from "../../common/addCommaTONumbers";
+import { addCommaToNumber } from "../common/addCommaTONumbers";
 
 const CountryDetails = () => {
     const router = useRouter();
@@ -101,7 +101,7 @@ const CountryDetails = () => {
                                 {item.borders &&
                                     item.borders.map((border: string, i: Key) => {
                                         return (
-                                            <Link href={`/countries/${border}`} key={i}>
+                                            <Link href={`/${border}`} key={i}>
                                                 <p
                                                     className={`${styles.country} bg-dark-mode-text-&-light-mode-elements dark:bg-dark-mode-elements`}
                                                 >
